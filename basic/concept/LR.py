@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 import sys
@@ -28,13 +29,13 @@ class LR(object):
         self.b += lr * np.mean(d_y, axis = 0)
 
         self.d_y = d_y
-        
+
     def output(self, x):
         return softmax(np.dot(x, self.W) + self.b)
-    
+
     def predict(self, x):
         return self.output(x)
-    
+
     def negative_log_likelihood(self):
         sigmoid_activation = softmax(numpy(self.x, self.W) + self.b)
 
