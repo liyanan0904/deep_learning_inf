@@ -37,9 +37,9 @@ class LR(object):
         return self.output(x)
 
     def negative_log_likelihood(self):
-        sigmoid_activation = softmax(numpy(self.x, self.W) + self.b)
+        sigmoid_activation = softmax(np.dot(self.x, self.W) + self.b)
 
-        cross_entropy = -numpy.mean(numpy.sum(self.y * numpy.log(sigmoid_activation) + (1 - self.y) * numpy.log(1 - sigmoid_activation), axis=1))
+        cross_entropy = -np.mean(np.sum(self.y * np.log(sigmoid_activation) + (1 - self.y) * np.log(1 - sigmoid_activation), axis=1))
 
 
         return cross_entropy
